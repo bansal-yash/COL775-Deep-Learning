@@ -1,0 +1,18 @@
+# COL775-A2 inference-time dependencies.
+#
+# torch and torchvision are guaranteed by the grading environment
+# (Python 3.10 + PyTorch 2.5.0+cu11.8 per `COL775-guidelines.pdf §3`),
+# so we list only the *additional* packages our inference scripts need.
+
+# Part A : inference_linear_probing.py / inference_retrieval.py / qualitative_retrieval.py
+scikit-learn>=1.0
+Pillow>=9.0
+tqdm>=4.60
+
+# Part B : inference.py uses LoRA adapters (peft) on Qwen3-4B
+peft>=0.12.0
+
+# Part B + Part C : transformers for Qwen3 + frozen clip-vit-base-patch32
+transformers>=4.30,<5.0
+
+# (Pinned upper bounds avoid surprise breaking changes; loosen if needed.)
